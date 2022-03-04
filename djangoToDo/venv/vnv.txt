@@ -1,0 +1,29 @@
+python -m venv venv
+Scripts\activate
+#show migrates
+python manage.py showmigrations
+
+#migrates
+python manage.py makemigrations
+python manage.py migrate
+
+
+#theme
+<link rel="stylesheet" href="{% static 'toDoList/bs/css/flaty.min.css' %}" />
+		<link rel="stylesheet" href={% static 'toDoList/styles.css' %}" />
+
+
+#models are python classes that allowes us to save data inside database;
+
+from django.db import modles
+
+class Person(models.Model):
+	first_name = models.CharField(max_length=30)
+	last_name = models.CharField(max_length=30)
+
+its like
+
+CREATE TABLE myapp_person(
+	"id" serial NOT NULL PRIMARY KEY,
+	"first_name" varchar(30) NOT NULL,
+	"last_name" varchar(30) NOT NULL);
